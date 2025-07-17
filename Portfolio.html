@@ -9,13 +9,18 @@
   <link rel="apple-touch-icon" sizes="180x180" href="assets/Favicon Generator/apple-touch-icon.png" />
   <meta name="apple-mobile-web-app-title" content="Portfolio Anaé Baiocco" />
   <link rel="manifest" href="assets/Favicon Generator/site.webmanifest" />
-  <title>Portfolio Anaé Baiocco</title>
+  <title>Portfolio Anaé</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="main.css">
 </head>
 <body>
   <header>
     <h1>Anaé Baiocco</h1>
+    <button class="burger" aria-label="Ouvrir le menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
     <nav>
       <a href="#about">About me</a>
       <a href="#resume">Resume</a>
@@ -24,7 +29,7 @@
     </nav>
   </header>
 
-  <section class="hero">
+  <section class="hero container">
     <h1>PORTFOLIO</h1>
     <div class="repeat-text">
       PORTFOLIO<br>
@@ -33,8 +38,9 @@
     </div>
     <div class="hero-image"></div>
     
+    <div class="scroll-down">Scroll down</div>
     <div class="scroll-indicator">
-      <div class="scroll-down">Scroll down</div>
+      
       <div class="black-bar"></div>
     </div>
     <div class="partner-notice">
@@ -44,38 +50,102 @@
     </div>
   </section>
 
-  <section id="about">
-    <h3>Hello, I’m Anaé!</h3>
-    <p>I am a self-taught Graphic Designer based in Switzerland with extensive marketing and communication experience. I am currently living in Switzerland and pursuing a degree in Digital Web & Project Management.</p>
-  </section>
-
-  <section id="resume">
-    <div class="education">
-      <h3>Education</h3>
-      <p><strong>2025–2026:</strong> Digital Campus, Montpellier – Digital Web & Project Management</p>
-      <p><strong>2024–2025:</strong> IUT de Béziers – Commercialisation Technique</p>
-      <p><strong>2021–2024:</strong> Economic University, Danang – International Business</p>
-    </div>
-    <div class="experience">
-      <h3>Experience</h3>
-      <p><strong>2022:</strong> Marketing Intern – BiEthic, Narbonne</p>
-      <p><strong>2021:</strong> Freelancer – Visual content creator</p>
-      <p><strong>2020:</strong> Graphic Designer – Songhan Incubator</p>
-      <div class="tags">
-        <span>#Creativity</span><span>#Communication</span><span>#Detail-oriented</span><span>#Adaptability</span>
+  <section class="container" id="about">
+    <div class="about-flex">
+      <div class="about-container">
+        <h1>Hello, <br> I’m Anaé!</h1>
+        <p>I am a self-taught Graphic Designer based in Switzerland with extensive marketing and communication experience. I am currently living in Switzerland and pursuing a degree in Digital Web & Project Management.</p>
       </div>
-    </div>
-    <div class="skills">
-      <h3>Technical Skills</h3>
-      <p>Software: Photoshop, Illustrator, InDesign, XD, Premiere</p>
-      <p>Web: HTML, CSS, JS, PHP, SQL</p>
-      <div class="tags">
-        <span>Packaging</span><span>UI/UX Design</span><span>Visual Design</span><span>User Research</span>
+      <div class="contact block">
+        <h2>Contact</h2>
+        <p>Location: Neuchâtel, Switzerland</p>
+        <p>Email: anae.baiocco@gmail.com</p>
+        <p>Phone: +41 79 836 83 70</p>
+        <p>LinkedIn: <a href="www.linkedin.com/in/anaé-baiocco-005212324" target="_blank">anae-baiocco</a></p>
       </div>
     </div>
   </section>
 
-  <section id="contact">
+  <section class="resume-grid" id="resume">
+    <div class="resume-col left">
+      <div class="education block">
+        <h2>Education</h2>
+        <div class="edu-item">
+          <span class="edu-date">2021-2022</span>
+          <span class="edu-title">UNLIMITED DOWNLOADS</span>
+          <span class="edu-desc">Don’t forget to check out our partner Envato</span>
+        </div>
+        <div class="edu-item">
+          <span class="edu-date">2021-2022</span>
+          <span class="edu-title">UNLIMITED DOWNLOADS</span>
+          <span class="edu-desc">Don’t forget to check out our partner Envato</span>
+        </div>
+        <div class="edu-item">
+          <span class="edu-date">2021-2022</span>
+          <span class="edu-title">UNLIMITED DOWNLOADS</span>
+          <span class="edu-desc">Don’t forget to check out our partner Envato</span>
+        </div>
+      </div>
+      <div class="experience block">
+        <h2>Experience</h2>
+        <div class="exp-item">
+          <span class="exp-date">2021-2022</span>
+          <span class="exp-title">UNLIMITED DOWNLOADS</span>
+          <span class="exp-desc">Don’t forget to check out our partner Envato</span>
+        </div>
+        <div class="exp-item">
+          <span class="exp-date">2021-2022</span>
+          <span class="exp-title">UNLIMITED DOWNLOADS</span>
+          <span class="exp-desc">Don’t forget to check out our partner Envato</span>
+        </div>
+        <div class="exp-item">
+          <span class="exp-date">2021-2022</span>
+          <span class="exp-title">UNLIMITED DOWNLOADS</span>
+          <span class="exp-desc">Don’t forget to check out our partner Envato</span>
+        </div>
+        <div class="tags">
+          <span>Wireframe</span>
+          <span>Visual design</span>
+          <span>UI/UX design</span>
+          <span>Mockup</span>
+        </div>
+      </div>
+    </div>
+    <div class="resume-col right">
+      <div class="skills block">
+        <h2>Technical skills</h2>
+        <div class="skills-list">
+          <div>
+            <strong>Software Skills</strong>
+            <div class="icons">
+              <span>F</span><span>Pr</span><span>Ae</span><span>Ps</span><span>Id</span><span>Ai</span>
+            </div>
+          </div>
+          <div>
+            <strong>Coding skills</strong>
+            <div>HTML<br>CSS</div>
+          </div>
+        </div>
+        <div class="tags">
+          <span>Wireframe</span>
+          <span>Visual design</span>
+          <span>UI/UX design</span>
+          <span>Mockup</span>
+        </div>
+      </div>
+      <div class="languages block">
+        <h2>Language</h2>
+        <div class="lang-list">
+          <div><strong>French</strong><br>Mother tongue</div>
+          <div><strong>English</strong><br>Good knowledge</div>
+          <div><strong>German</strong><br>School level</div>
+          <div><strong>Italian</strong><br>Good understanding</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="container " id="contact">
     <h3>Contact</h3>
     <p>Location: Neuchâtel, Switzerland</p>
     <p>Email: anae.baiocco@gmail.com</p>
@@ -83,7 +153,7 @@
     <p>LinkedIn: <a href="https://linkedin.com/in/anae-baiocco" target="_blank">anae-baiocco</a></p>
   </section>
 
-  <section id="hobbies">
+  <section class="container " id="hobbies">
     <h3>Hobbies & Interests</h3>
     <ul>
       <li>Classical Funky/Gypsy Jazz</li>
@@ -102,5 +172,6 @@
       window.scrollTo({ top: window.innerHeight, behavior: "smooth" });
     });
   </script>
+  <script src="burger.js"></script>
 </body>
 </html>

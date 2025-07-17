@@ -10,7 +10,7 @@
 	font-weight: normal;
 	font-style: normal;
   }
-* {
+  * {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
@@ -40,6 +40,10 @@
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
+  align-items: center;
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
   }
   nav a {
 	margin: 0.5rem 1rem;
@@ -85,7 +89,7 @@
     position: absolute;
     width: 40vw;
     height: 70vh;
-    background-image: url('assets/anae.jpg'); 
+    background-image: url('assets/ImagePlaceholder.png'); 
     background-size: cover;
     background-position: center;
     z-index: 100; 
@@ -96,18 +100,20 @@
     font-weight: bold;
     margin: 0;
     text-transform: uppercase;
-	position: relative;
+	  position: relative;
     bottom: 240px;
     z-index: 200;
-	color: #fff;
+	  color: #fff;
+    letter-spacing: 0.2rem;
   }
 
   .repeat-text {
     position: absolute;
     font-size: 150px;
     font-weight: bold;
-	color: #2e3c2f;
-	text-shadow:
+    letter-spacing: 0.2rem;
+    color: #2e3c2f;
+    text-shadow:
     2px 2px 0 #f5a623,
     -2px 2px 0 #f5a623,
     2px -2px 0 #f5a623,
@@ -117,9 +123,8 @@
     -2px 0px 0 #f5a623,
     0px -2px 0 #f5a623;
     opacity: 0.2;
-    line-height: 0.8;
+    line-height: 0.9;
     text-transform: uppercase;
-    
     z-index: 1;
     user-select: none;
   }
@@ -150,7 +155,6 @@
 	z-index: 4;
   }
 
-
  .black-bar {
     height: 200px;
     width: 100%;
@@ -158,14 +162,14 @@
 	z-index: -100;
   }
   .scroll-down {
-	margin-top: 2rem;
+	top: 200px;
 	background-color: #f5a623;
 	padding: 0.75rem 1.5rem;
 	border-radius: 50px;
 	font-weight: bold;
 	cursor: pointer;
 	animation: bounce 2s infinite;
-	z-index: 2;
+	z-index: 200;
 	position: relative;
 	color: #fff;
 	font-family: 'Avenir', sans-serif;
@@ -177,17 +181,18 @@
   section {
 	padding: 4rem 2rem;
   }
-  section h3 {
+  section h1 {
 	font-family: 'Hallo-Almond', serif;
-	font-size: 1.8rem;
+	font-size: 90px;
 	margin-bottom: 1rem;
   }
-  .education p, .experience p, .skills p {
-	margin-bottom: 0.5rem;
-  }
-  #resume {
-	background-color: #2e3c2f;
-	color: white;
+  .about-container {
+    margin: 4rem;
+    
+    
+    @media (max-width: 768px) {
+      padding-right: 0;
+    }
   }
   .tags span {
 	display: inline-block;
@@ -223,9 +228,34 @@
 	  flex-direction: column;
 	  align-items: center;
 	}
-	.hero h2, .hero .repeat-text {
-	  font-size: 2.2rem;
+	.hero h1, .repeat-text {
+	  font-size: 4rem;
+    
 	}
+  .repeat-text {
+    top: 100px;
+    line-height: 1.2;
+    font-weight: 100;
+    text-shadow:
+    1px 1px 0 #f5a623,
+    -1px 1px 0 #f5a623,
+    1px -1px 0 #f5a623,
+    -1px -1px 0 #f5a623,
+    1px 0px 0 #f5a623,
+    0px 1px 0 #f5a623,
+    -1px 0px 0 #f5a623,
+    0px -1px 0 #f5a623;
+  }
+  .hero-image {
+    width: 80vw;
+    height: 50vh;
+    left: auto;
+    
+  }
+  .partner-notice {
+    bottom: 10px;
+    
+  }
 	section {
 	  padding: 2rem 1rem;
 	}
@@ -233,3 +263,194 @@
 	  font-size: 1.5rem;
 	}
   }
+
+/* --- Menu Burger --- */
+.burger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1100;
+}
+.burger span {
+  display: block;
+  width: 28px;
+  height: 4px;
+  margin: 4px 0;
+  background: #f5a623;
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
+@media (max-width: 768px) {
+  .burger {
+    display: flex;
+  }
+  nav {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100vw;
+    background: #2e3c2f;
+    z-index: 1000;
+    padding: 2rem 0;
+    text-align: center;
+  }
+  nav.open {
+    display: flex;
+  }
+  nav a {
+    margin: 1rem 0;
+    font-size: 1.3rem;
+  }
+  header {
+    position: sticky;
+    flex-direction: row;
+  }
+}
+
+.burger.active span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+.burger.active span:nth-child(2) {
+  opacity: 0;
+}
+.burger.active span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* --- Résumé en deux colonnes --- */
+.resume-grid {
+  background-color: #2e3c2f;
+  color: #fff;
+  display: flex;
+  gap: 2rem;
+  margin: 3rem 0;
+  flex-wrap: wrap;
+}
+.resume-col {
+  flex: 1 1 350px;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.block {
+  background: #2e3c2f;
+  color: #fff;
+  border-radius: 16px;
+  padding: 2rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+}
+.block h2 {
+  font-family: 'Hallo-Almond', serif;
+  color: #f5a623;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+.edu-item, .exp-item {
+  margin-bottom: 1.2rem;
+}
+.edu-date, .exp-date {
+  color: #f5a623;
+  font-weight: bold;
+  margin-right: 1rem;
+}
+.edu-title, .exp-title {
+  font-weight: bold;
+}
+.tags {
+  margin-top: 1rem;
+}
+.tags span {
+  display: inline-block;
+  background: #f5a623;
+  color: #2e3c2f;
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  margin: 0.2rem 0.4rem 0.2rem 0;
+  font-size: 1rem;
+  font-weight: 500;
+}
+.skills-list {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 1rem;
+}
+.skills-list strong {
+  color: #fff;
+  font-size: 1.1rem;
+}
+.icons span {
+  display: inline-block;
+  background: #fff;
+  color: #2e3c2f;
+  border-radius: 6px;
+  padding: 0.2rem 0.6rem;
+  margin: 0.1rem;
+  font-weight: bold;
+}
+.languages .lang-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+.languages .lang-list > div {
+  min-width: 120px;
+}
+@media (max-width: 900px) {
+  .resume-grid {
+    flex-direction: column;
+  }
+}
+/* Suppression des anciennes règles inutiles */
+.education, .experience, .skills {
+  background: none;
+  color: inherit;
+  border-radius: 0;
+  padding: 0;
+  margin-bottom: 0;
+  box-shadow: none;
+}
+.education h3, .experience h3, .skills h3 {
+  font-family: inherit;
+  color: inherit;
+  font-size: inherit;
+  margin-bottom: 0;
+}
+.education p, .experience p, .skills p {
+  margin-bottom: 0;
+}
+.about-flex {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+}
+.contact.block {
+  min-width: 260px;
+  max-width: 320px;
+  flex: 0 0 320px;
+  background: #2e3c2f;
+  color: #fff;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+}
+@media (max-width: 900px) {
+  .about-flex {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .contact.block {
+    max-width: 100%;
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+}
